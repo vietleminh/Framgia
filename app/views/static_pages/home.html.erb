@@ -1,0 +1,31 @@
+<% provide(:title,"Home") %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_infor">
+        <%= render 'shared/user_infor' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+
+      <section class="entry_form">
+        <%= render 'shared/entry_form' %>
+        
+      </section>
+    </aside>
+  <div class="col-md-8">
+      <h3>New Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+
+<% else indefinite? %>
+<div class="row">
+  <div class="col-md-8">
+      <h3>New Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+</div>
+<%end %>
+
