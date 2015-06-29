@@ -13,7 +13,6 @@ gem 'therubyracer'
 # Use Unicorn as the app server
 # gem 'unicorn'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Bootstrap
 gem 'bootstrap-sass',       '3.2.0.0'
 # Use SCSS for stylesheets
@@ -40,7 +39,6 @@ gem 'faker' , '1.4.2'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
   gem 'unicorn',        '4.8.3'
 
 # Use ActiveModel has_secure_password
@@ -54,4 +52,13 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+group :development, :test do
+  gem 'sqlite3',     '1.3.9'
+  gem 'byebug',      '3.4.0'
+  gem 'web-console', '2.0.0.beta3'
+  gem 'spring',      '1.1.3'
+end
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end

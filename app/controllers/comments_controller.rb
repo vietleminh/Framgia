@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
       render "/entries/show"
     end
   end
-  
   private
   def comment_params
       params.require(:comment).permit(:content, :user_id, :entry_id)

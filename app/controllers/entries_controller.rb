@@ -22,9 +22,7 @@ class EntriesController < ApplicationController
 
   end
   def index
-    def index
 @entries = Entry.all.paginate(page: params[:page], :per_page => 10 )
-end
   end
   private
 
